@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:testFireStore/models/brew.dart';
+import 'package:testFireStore/screens/clgApp/home/clg_home.dart';
 import 'package:testFireStore/screens/home/brew_list.dart';
 import 'package:testFireStore/screens/home/settings_form.dart';
 import 'package:testFireStore/services/auth.dart';
@@ -50,7 +51,11 @@ class Home extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           child: Text("YO"),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ClgHome(),
+            ));
+          },
         ),
         body: BrewList(),
       ),

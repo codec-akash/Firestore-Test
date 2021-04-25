@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:testFireStore/models/brew.dart';
 import 'package:testFireStore/models/user.dart';
 
@@ -10,7 +11,6 @@ class DataBaseService {
       FirebaseFirestore.instance.collection('brews');
 
   Future updateUserData(String sugars, String name, int strength) async {
-    DocumentSnapshot documentSnapshot = await brewCollection.doc(uId).get();
     return await brewCollection.doc(uId).set({
       'sugars': sugars,
       'name': name,
